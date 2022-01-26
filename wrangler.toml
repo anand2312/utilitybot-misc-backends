@@ -1,10 +1,10 @@
 name = "utilitybot-misc-backends"
-type = "javascript"
+type = "rust"
 workers_dev = true
 compatibility_date = "2022-01-26"
 
 kv_namespaces = [ 
-  { binding = "ROLENAMES", id = "a1058cda195244f7a80d01d15afc633c" }
+  { binding = "rolenames", id = "a1058cda195244f7a80d01d15afc633c" }
 ]
 
 [vars]

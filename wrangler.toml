@@ -3,6 +3,10 @@ type = "javascript"
 workers_dev = true
 compatibility_date = "2022-01-26"
 
+kv_namespaces = [ 
+  { binding = "ROLENAMES", id = "a1058cda195244f7a80d01d15afc633c" }
+]
+
 [vars]
 WORKERS_RS_VERSION = "0.0.7"
 

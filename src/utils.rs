@@ -14,7 +14,16 @@ cfg_if! {
 }
 
 
-pub fn auth(req: &Request, ,ctx: &RequestContext) -> bool {
-    const API_KEY = ctx.var("API-KEY")?.to_string();
-    return API_KEY == req.headers().get("API-KEY").unwrap_or("never gonna give you up".to_string());
+pub fn auth<T>(req: &Request, ctx: &RouteContext<T>) -> bool {
+    let API_KEY = ctx.var("API-KEY").unwrap().to_string();
+    let user_key = match req.headers().get("API-KEY") {
+        Ok(x) => {
+            match x {
+                Some(key) => key,
+                None => return false
+            }
+        },
+        _ => { return false }
+    };
+    return API_KEY == user_key;
 }

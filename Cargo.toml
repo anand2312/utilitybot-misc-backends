@@ -3,6 +3,9 @@ name = "utilitybot-misc-backends"
 version = "0.1.0"
 authors = ["anand2312 <anandkrishna2312@gmail.com>"]
 edition = "2018"
+description = "Random backends for utilitybot, a dumbass discord bot"
+repository = "https://github.com/anand2312/utilitybot-misc-backends"
+license = "MIT"
 
 [lib]
 crate-type = ["cdylib", "rlib"]

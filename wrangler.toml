@@ -4,7 +4,7 @@ workers_dev = true
 compatibility_date = "2022-01-26"
 
 kv_namespaces = [ 
-  { binding = "rolenames", id = "a1058cda195244f7a80d01d15afc633c" }
+  { binding = "rolenames", preview_id = "e6d7f19863e94b28bf27157c4821dbe6", id = "a1058cda195244f7a80d01d15afc633c" }
 ]
 
 [vars]
@@ -14,7 +14,7 @@ WORKERS_RS_VERSION = "0.0.7"
 command = "cargo install -q worker-build && worker-build --release" # required
 
 [build.upload]
-dir    = "build/worker"
+dir    = "pkg"
 format = "modules"
 main   = "./shim.mjs"
 

@@ -35,7 +35,7 @@ pub async fn post<T>(mut req: Request, ctx: RouteContext<T>) -> Result<Response>
     };
 
     let kv_value = format!("{{\"added_by\": {} }}", user_id);
-    kv.put(rolename.as_str().unwrap(), kv_value);
+    kv.put(rolename.as_str().unwrap(), kv_value).unwrap().execute().await?;
     return Response::empty();
 }
 

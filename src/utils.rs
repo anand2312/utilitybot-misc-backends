@@ -16,7 +16,7 @@ cfg_if! {
 
 pub fn auth<T>(req: &Request, ctx: &RouteContext<T>) -> bool {
     let API_KEY = ctx.var("API-KEY").unwrap().to_string();
-    let user_key = match req.headers().get("API-KEY") {
+    let user_key = match req.headers().get("API_KEY") {
         Ok(x) => {
             match x {
                 Some(key) => key,

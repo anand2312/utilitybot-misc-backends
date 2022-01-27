@@ -5,8 +5,8 @@ use crate::utils;
 
 
 pub async fn get<T>(req: Request, ctx: RouteContext<T>) -> Result<Response> {
-    if utils::auth(&req, &ctx) {
-        return Response::error("Unauthenticated. Pass the API_KEY header!", 401);
+    if !utils::auth(&req, &ctx) {
+        return Response::error("Unauthenticated. Pass the API_KEY header! If you have passed it, check if it's right.", 401);
     }
 
     let kv = ctx.kv("rolenames")?;
@@ -18,8 +18,8 @@ pub async fn get<T>(req: Request, ctx: RouteContext<T>) -> Result<Response> {
 }
 
 pub async fn post<T>(mut req: Request, ctx: RouteContext<T>) -> Result<Response> {
-    if utils::auth(&req, &ctx) {
-        return Response::error("Unauthenticated. Pass the API_KEY header!", 401);
+    if !utils::auth(&req, &ctx) {
+        return Response::error("Unauthenticated. Pass the API_KEY header! If you have passed it, check if it's right.", 401);
     }
     
     let kv = ctx.kv("rolenames")?;
@@ -41,8 +41,8 @@ pub async fn post<T>(mut req: Request, ctx: RouteContext<T>) -> Result<Response>
 
 
 pub async fn delete<T>(mut req: Request, ctx: RouteContext<T>) -> Result<Response> {
-    if utils::auth(&req, &ctx) {
-        return Response::error("Unauthenticated. Pass the API_KEY header!", 401);
+    if !utils::auth(&req, &ctx) {
+        return Response::error("Unauthenticated. Pass the API_KEY header! If you have passed it, check if it's right.", 401);
     }
 
     let kv = ctx.kv("rolenames")?;

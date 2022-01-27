@@ -1,7 +1,8 @@
 name = "utilitybot-misc-backends"
-type = "rust"
+type = "javascript"
 workers_dev = true
 compatibility_date = "2022-01-26"
+account_id = "a16c46903e48ca62bccffe417a00c7c6"
 
 kv_namespaces = [ 
   { binding = "rolenames", preview_id = "e6d7f19863e94b28bf27157c4821dbe6", id = "a1058cda195244f7a80d01d15afc633c" }
@@ -14,7 +15,7 @@ WORKERS_RS_VERSION = "0.0.7"
 command = "cargo install -q worker-build && worker-build --release" # required
 
 [build.upload]
-dir    = "pkg"
+dir    = "build/worker"
 format = "modules"
 main   = "./shim.mjs"
 
